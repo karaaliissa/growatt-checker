@@ -110,3 +110,4 @@ async function sendEmail(status, gridPower) {
 
 // === Run ===
 checkGeneratorStatus();
+sendTelegram("TEST", 0);
