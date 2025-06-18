@@ -1,16 +1,13 @@
 const fs = require("fs");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
-
-const TELEGRAM_TOKEN = "8185101661:AAHiB8Q7ZXWLYYMTRDFfh-_kACXQ12Fy-38";
-const TELEGRAM_CHAT_ID = "475041150";
-
-// === CONFIG ===
-const COOKIE = `JSESSIONID=5FE3F2E42785625E8118909B19077779; loginPage=login; lang=en; assToken=4547175852adecb6a1bcd21f8dff67e8; mapLang=com; selectedPlantId=2678376; plantSize=1; onePlantId=2678376; onePlantType=0; selPage=%2Fpanel; memoryDeviceType=%5B%7B%22key%22%3A%222678376%22%2C%22value%22%3A%22storage%22%7D%5D; memoryDeviceSn=%5B%7B%22key%22%3A%222678376%22%2C%22value%22%3A%22storage%25ZRK0CFM0AN%22%7D%5D; SERVERID=1984b691d07d4a26c58982514be957c2|1750244085|1750244049`;
-const EMAIL_FROM = "karooorak3@gmail.com";
-const EMAIL_TO = "karooorak3@gmail.com";
-const EMAIL_PASS = "lzsg ekvc mmei iwao";
 const STATUS_FILE = "./last_grid_status.txt";
+const EMAIL_FROM = process.env.EMAIL_FROM;
+const EMAIL_TO = process.env.EMAIL_TO;
+const EMAIL_PASS = process.env.EMAIL_PASS;
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const COOKIE = process.env.COOKIE;
 
 // === EMAIL SETUP ===
 const transporter = nodemailer.createTransport({
